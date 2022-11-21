@@ -4,8 +4,17 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'my-testing-app',
     environment,
-    rootURL: '',
-    locationType: 'hash',
+    rootURL: '/',
+    locationType: 'auto',
+    contentSecurityPolicy: {
+      'default-src': "'none' 'gap://ready'",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
+      'font-src': "'self'",
+      'connect-src': "'self' 'localhost'",
+      'img-src': "'self'",
+      'report-uri':"'localhost'",
+      'style-src': "'self' 'unsafe-inline'",
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
